@@ -2,8 +2,6 @@
 
 A simple, single-file HTML dashboard to get a consolidated view of all your Trello boards made with AI. It focuses on providing a clear overview of tasks in 'Backlog', 'To Do', and 'Doing' lists, with a special "Today's Focus" section to highlight all tasks you are currently working on.
 
-!(https://via.placeholder.com/800x400.png?text=Trello+Board+Viewer+Screenshot)
-
 ---
 
 ## Features ✨
