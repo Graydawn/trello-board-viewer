@@ -1,60 +1,61 @@
-Trello Board Viewer
-A simple, single-file HTML dashboard to get a consolidated view of all your Trello boards made with AI. It focuses on providing a clear overview of tasks in 'Backlog', 'To Do', and 'Doing' lists, with a special "Today's Focus" section to highlight all tasks you are currently working on.
+# Trello Board Viewer
 
-Features ✨
-Unified Dashboard: View cards from all your Trello boards on a single page.
+A simple, single-file HTML dashboard to get a consolidated view of all your Trello boards. It focuses on providing a clear overview of tasks in 'Backlog', 'To Do', and 'Doing' lists, with a special "Today's Focus" section to highlight all tasks you are currently working on.
 
-Kanban Layout: Displays columns for 'Backlog', 'To Do', and 'Doing' lists for each board.
+!(https://via.placeholder.com/800x400.png?text=Trello+Board+Viewer+Screenshot)
 
-Today's Focus: A dedicated section at the top aggregates all cards currently in 'Doing' lists across all boards, so you know exactly what to work on.
+---
 
-Drag & Drop: Easily move cards between 'Backlog', 'To Do', and 'Doing'. The changes are updated on your Trello board in real-time.
+## Features ✨
 
-Quick Complete: Mark tasks as complete directly from the "Today's Focus" section.
+* **Unified Dashboard**: View cards from all your Trello boards on a single page.
+* **Kanban Layout**: Displays columns for 'Backlog', 'To Do', and 'Doing' lists for each board.
+* **Today's Focus**: A dedicated section at the top aggregates all cards currently in 'Doing' lists across all boards, so you know exactly what to work on.
+* **Drag & Drop**: Easily move cards between 'Backlog', 'To Do', and 'Doing'. The changes are updated on your Trello board in real-time.
+* **Quick Complete**: Mark tasks as complete directly from the "Today's Focus" section.
+* **Live Search**: Instantly filter cards across all boards by name.
+* **Collapsible Boards**: Collapse or expand boards to focus on what matters most.
+* **Zero Dependencies**: A self-contained HTML file that runs directly in your browser.
 
-Live Search: Instantly filter cards across all boards by name.
+---
 
-Collapsible Boards: Collapse or expand boards to focus on what matters most.
+## How to Use 🚀
 
-Zero Dependencies: A self-contained HTML file that runs directly in your browser.
-
-How to Use 🚀
 This is a single HTML file that runs locally in your browser. No server or build process is needed.
 
-1. Get Trello API Credentials
-You need to generate a personal API Key and Token to allow the script to access your boards.
+### 1. Get Trello API Credentials
 
-Go to the Trello Developer API Keys page.
+You need to generate a personal **API Key** and **Token** to allow the script to access your boards.
 
-You will see your "Personal Key" under the header. This is your API_KEY.
+1.  Go to the [Trello Developer API Keys](https://trello.com/app-key) page.
+2.  You will see your "Personal Key" under the header. This is your `API_KEY`.
+3.  On that same page, click the **"Token"** link to manually generate a token.
+4.  Click **"Allow"** on the next page to grant access.
+5.  The page will show your token. This is your `TOKEN`.
 
-On that same page, click the "Token" link to manually generate a token.
+### 2. Add Credentials to the File
 
-Click "Allow" on the next page to grant access.
+1.  Open the `index.html` file in a text editor.
+2.  Find the following lines in the `<script>` section at the bottom:
+    ```javascript
+    const API_KEY = 'API_KEY';
+    const TOKEN   = 'TOKEN';
+    ```
+3.  Replace `'API_KEY'` and `'TOKEN'` with the credentials you just generated.
 
-The page will show your token. This is your TOKEN.
+### 3. Run It
 
-2. Add Credentials to the File
-Open the index.html file in a text editor.
+Save the file and open `index.html` in your web browser. That's it! Your Trello boards will load automatically.
 
-Find the following lines in the <script> section at the bottom:
+---
 
-JavaScript
+## How It Works 🛠️
 
-const API_KEY = 'API_KEY';
-const TOKEN   = 'TOKEN';
-Replace 'API_KEY' and 'TOKEN' with the credentials you just generated.
+* The page uses the **Trello API** to fetch your boards, lists, and cards.
+* It specifically looks for lists named 'Backlog', 'To Do', and 'Doing' (case-insensitive) and ignores others (like 'Done').
+* **Sortable.js** (included via CDN) is used to enable the drag-and-drop functionality.
+* When a card is moved to a new column or reordered, API calls are made to Trello to update the card's list (`idList`) and position (`pos`).
 
-3. Run It
-Save the file and open index.html in your web browser. That's it! Your Trello boards will load automatically.
+---
 
-How It Works 🛠️
-The page uses the Trello API to fetch your boards, lists, and cards.
-
-It specifically looks for lists named 'Backlog', 'To Do', and 'Doing' (case-insensitive) and ignores others (like 'Done').
-
-Sortable.js (included via CDN) is used to enable the drag-and-drop functionality.
-
-When a card is moved to a new column or reordered, API calls are made to Trello to update the card's list (idList) and position (pos).
-
-Note: This README file was generated by an AI assistant based on the provided source code.
+> **Note**: This README file was generated by an AI assistant based on the provided source code.
